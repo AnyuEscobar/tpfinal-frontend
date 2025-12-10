@@ -243,7 +243,7 @@ const Home = () => {
 
     <Layout>
 
-      <div className="page-banner">Nuestros Productos</div>
+      <div className="page-banner">Nuestro catálogo</div>
 
 
 
@@ -251,7 +251,7 @@ const Home = () => {
 
         <p>
 
-          Bienvenido {user && user.id} a nuestra librería. Aquí encontrarás una amplia variedad de libros.
+          Bienvenido a nuestra librería. Aquí encontrarás una amplia variedad de libros.
 
         </p>
 
