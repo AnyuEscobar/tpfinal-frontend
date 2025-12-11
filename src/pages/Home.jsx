@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import { useAuth } from "../context/AuthContext"
 import UpdateBook from "../components/UpdateBook"
 import ToastMessage from "../components/ToastMessage"
-import { GENRE } from "../constants/genres"
+import genre from "../constants/genre"
 
 const Home = () => {
   const initialErrorState = {
@@ -107,7 +107,7 @@ const Home = () => {
           <input type="text" name="author" placeholder="Buscar por autor" onChange={handleChange} value={filters.author} />
           <select name="genre" onChange={handleChange} value={filters.genre}>
             <option defaultValue>Todos los géneros</option>
-            {GENRE.map((genre) => (
+            {genre.map((genre) => (
               <option key={genre.id} value={genre.value}>{genre.content}</option>
             ))}
           </select>
