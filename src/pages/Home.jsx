@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import { useEffect, useState } from "react"
 import GENRE from "../constants/genre"
 import { ToastMessage } from "../components/ToastMessage"
-
+import UpdateBook from "../components/UpdateBook"
 
 const Home = () => {
 
@@ -96,19 +96,13 @@ const Home = () => {
     try {
 
       const response = await fetch(`http://localhost:1000/books/${idBook}`, {
-
         method: "DELETE",
-
         headers: {
-
           "Authorization": `Bearer ${token}`
-
         }
-
       })
 
       const dataResponse = await response.json()
-
 
       if (dataResponse.error) {
 
@@ -119,15 +113,10 @@ const Home = () => {
       }
 
       setBooks(books.filter((b) => b._id !== idBook))
-
-
-
       alert(`${dataResponse.data.title} borrado con éxito.`)
 
     } catch (error) {
-
     }
-
   }
 
   const handleUpdateBook = (b) => {
@@ -136,16 +125,11 @@ const Home = () => {
 
   }
 
-
-
   const handleChange = (e) => {
-
     setFilters({
-
       ...filters,
 
       [e.target.name]: e.target.value
-
     })
 
   }
@@ -160,54 +144,33 @@ const Home = () => {
 
     const query = new URLSearchParams()
 
-
-
     if (filters.title) query.append("title", filters.title)
-
     if (filters.genre) query.append("genre", filters.genre)
-
     if (filters.minYear) query.append("minYear", filters.minYear)
-
     if (filters.maxYear) query.append("maxYear", filters.maxYear)
-
     if (filters.author) query.append("author", filters.author)
-
-
-
     fetchingBooks(query.toString())
 
   }
 
-
-
   const handleResetFilters = () => {
 
     setFilters({
-
       title: "",
-
       genre: "",
-
       minYear: 0,
-
       maxYear: 0,
-
       author: ""
 
     })
 
   }
 
-
-
   return (
 
     <Layout>
 
       <div className="page-banner">Nuestro catálogo</div>
-
-
-
       <section className="page-section">
 
         <p>
@@ -215,25 +178,15 @@ const Home = () => {
           Bienvenido a nuestra librería. Aquí encontrarás una amplia variedad de libros.
 
         </p>
-
       </section>
-
-
-
       <section >
 
         <form className="filters-form" onSubmit={handleSubmit}>
-
           <input
-
             type="text"
-
             name="title"
-
             placeholder="Buscar por título"
-
             onChange={handleChange}
-
             value={filters.title}
 
           />
@@ -257,7 +210,6 @@ const Home = () => {
           >
 
             <option defaultValue>Todos los géneros</option>
-
             {
 
               GENRE.map((genre) =>
@@ -341,6 +293,7 @@ const Home = () => {
             <p>{b.genre}</p>
 
             <p><strong>Autor:</strong> {b.author}</p>
+            <p> {b.year} </p>
 
             {
 
