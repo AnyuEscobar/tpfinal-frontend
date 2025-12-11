@@ -19,7 +19,7 @@ const AddBook = () => {
     e.preventDefault()
 
     try {
-      const response = await fetch(`http://localhost:1000/books`, {
+      const response = await fetch(`https://backend-utn-4tf6.onrender.com/books`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,7 @@ const AddBook = () => {
         },
         body: JSON.stringify({
           ...formData,
-          publishedYear: Number(formData.publishedYear)
+          publishedYear: formData.publishedYear ? Number(formData.publishedYear) : undefined
         })
       })
 

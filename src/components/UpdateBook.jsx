@@ -8,7 +8,7 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
     title: book.title,
     author: book.author,
     genre: book.genre,
-    year: Number(book.year),
+    publishedYear: Number(book.publishedYear),
     available: book.available
   })
 
@@ -16,7 +16,6 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
-
     setFormData({
       ...formData,
       [name]: type === "checkbox" ? checked : value
@@ -25,16 +24,14 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
     const dataToUpdate = {
       ...formData,
-      year: Number(formData.year)
+      publishedYear: Number(formData.publishedYear)
     }
 
     try {
       setLoader(true)
-
-      const response = await fetch(`http://localhost:1000/books/${book._id}`, {
+      const response = await fetch(`https://backend-utn-4tf6.onrender.com/books/${book._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +46,6 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
 
       onUpdate()
       onClose()
-
     } catch (error) {
       console.log("Error al actualizar el libro :(", error)
     } finally {
@@ -62,7 +58,6 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
       <div className="modal-box">
         <h2>Editar libro</h2>
         <form className="form-container" onSubmit={handleSubmit}>
-
           <input
             name="title"
             type="text"
@@ -70,7 +65,6 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
             onChange={handleChange}
             placeholder="Título"
           />
-
           <input
             name="author"
             type="text"
@@ -78,7 +72,6 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
             onChange={handleChange}
             placeholder="Autor"
           />
-
           <input
             name="genre"
             type="text"
@@ -86,15 +79,13 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
             onChange={handleChange}
             placeholder="Género"
           />
-
           <input
-            name="year"
+            name="publishedYear"
             type="number"
-            value={formData.year}
+            value={formData.publishedYear}
             onChange={handleChange}
             placeholder="Año de publicación"
           />
-
           <label>
             Disponible:
             <input
@@ -104,12 +95,10 @@ const UpdateBook = ({ book, onClose, onUpdate }) => {
               onChange={handleChange}
             />
           </label>
-
           <button type="submit">
             {loader ? "Guardando..." : "Guardar cambios"}
           </button>
         </form>
-
         <button className="close-btn" type="button" onClick={onClose}>
           Cancelar
         </button>
