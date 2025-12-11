@@ -8,48 +8,28 @@ import { ToastMessage } from "../components/ToastMessage"
 const Home = () => {
 
   const initialErrorState = {
-
     success: null,
-
     notification: null,
-
     error: {
-
       fetch: null,
-
       delete: null
-
     }
-
   }
 
-
-
   const [books, setBooks] = useState([])
-
   const [selectedBook, setSelectedBook] = useState(null)
-
   const [filters, setFilters] = useState({
-
     title: "",
-
     genre: "",
-
     minYear: 0,
-
     maxYear: 0,
-
     author: ""
 
   })
 
   const [responseServer, setResponseServer] = useState(initialErrorState)
 
-
-
   const { user, token } = useAuth()
-
-
 
   const fetchingBooks = async (query = "") => {
 
@@ -70,13 +50,9 @@ const Home = () => {
       setResponseServer({
 
         success: true,
-
         notification: "Carga de libros exitosa",
-
         error: {
-
           ...responseServer.error,
-
           fetch: true
 
         }
@@ -86,11 +62,8 @@ const Home = () => {
     } catch (e) {
 
       setResponseServer({
-
         success: false,
-
         notification: "Error al traer los datos",
-
         error: {
 
           ...responseServer.error,
@@ -106,14 +79,11 @@ const Home = () => {
   }
 
 
-
   useEffect(() => {
 
     fetchingBooks()
 
   }, [])
-
-
 
   const deleteBook = async (idBook) => {
 
@@ -123,11 +93,9 @@ const Home = () => {
 
     }
 
-
-
     try {
 
-      const response = await fetch(`http://localhost:1000/books/${idProduct}`, {
+      const response = await fetch(`http://localhost:1000/books/${idBook}`, {
 
         method: "DELETE",
 
@@ -142,7 +110,6 @@ const Home = () => {
       const dataResponse = await response.json()
 
 
-
       if (dataResponse.error) {
 
         alert(dataResponse.error)
@@ -151,23 +118,17 @@ const Home = () => {
 
       }
 
-
-
-      setBooks(books.filter((b) => p._id !== idBook))
+      setBooks(books.filter((b) => b._id !== idBook))
 
 
 
-      alert(`${dataResponse.data.name} borrado con éxito.`)
+      alert(`${dataResponse.data.title} borrado con éxito.`)
 
     } catch (error) {
-
-
 
     }
 
   }
-
-
 
   const handleUpdateBook = (b) => {
 

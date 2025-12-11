@@ -8,6 +8,7 @@ const AddBook = () => {
     title: "",
     author: "",
     genre: "",
+    year: "",
     available: true
   })
 
@@ -24,7 +25,10 @@ const AddBook = () => {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          year: Number(formData.year)
+        })
       })
 
       const data = await response.json()
@@ -40,6 +44,7 @@ const AddBook = () => {
         title: "",
         author: "",
         genre: "",
+        year: "",
         available: true
       })
 
@@ -99,6 +104,17 @@ const AddBook = () => {
             required
           />
 
+          <input
+            type="number"
+            placeholder="Año de publicación"
+            name="year"
+            min={1500}
+            max={2100}
+            onChange={handleChange}
+            value={formData.year}
+            required
+          />
+
           <label style={{ display: "flex", gap: "10px", alignItems: "center" }}>
             <input
               type="checkbox"
@@ -117,4 +133,3 @@ const AddBook = () => {
 }
 
 export default AddBook
-
