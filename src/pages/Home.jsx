@@ -4,6 +4,9 @@ import { useEffect, useState } from "react"
 import GENRE from "../constants/genre"
 import { ToastMessage } from "../components/ToastMessage"
 import UpdateBook from "../components/UpdateBook"
+import "../styles/Home.css"
+
+
 
 const Home = () => {
 
@@ -170,7 +173,7 @@ const Home = () => {
 
     <Layout>
 
-      <div className="page-banner">Nuestro catálogo</div>
+      <div className="page-banner">El rincón de los libros</div>
       <section className="page-section">
 
         <p>
