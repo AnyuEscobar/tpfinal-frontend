@@ -6,4 +6,4 @@ const ToastMessage = ({ msg, color }) => {
   )
 }
 
-export { ToastMessage }
+export default ToastMessage
