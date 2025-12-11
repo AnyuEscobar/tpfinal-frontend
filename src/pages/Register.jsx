@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault()
 
     try {
-      const response = await fetch("http://localhost:1000/auth/register", {
+      const response = await fetch("https://backend-utn-4tf6.onrender.com/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
