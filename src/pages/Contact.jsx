@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
-import "../styles/contact.css"
+
 
 export default function Contact() {
   const [form, setForm] = useState({

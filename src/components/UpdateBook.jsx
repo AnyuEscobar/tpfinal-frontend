@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useAuth } from "../context/AuthContext"
-import "../styles/updatebook.css"
+
 
 const UpdateBook = ({ book, onClose, onUpdate }) => {
   const [loader, setLoader] = useState(false)

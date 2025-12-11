@@ -2,7 +2,7 @@ import { useState } from "react"
 import Layout from "../components/Layout"
 import { useAuth } from "../context/AuthContext"
 import { useNavigate } from "react-router-dom"
-import "../styles/addbook.css"
+
 
 const AddBook = () => {
   const [formData, setFormData] = useState({
