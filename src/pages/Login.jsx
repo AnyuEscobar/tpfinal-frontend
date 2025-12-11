@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import Layout from "../components/Layout"
 import { useAuth } from "../context/AuthContext"
 import { useState } from "react"
+import "../styles/login.css"
 
 const Login = () => {
   const [formData, setFormData] = useState({

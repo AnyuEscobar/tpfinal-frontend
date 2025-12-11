@@ -1,0 +1,106 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Caja del modal */
+.modal-box {
+  background: white;
+  padding: 25px;
+  width: 380px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.25s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Título */
+.modal-box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Formulario reutilizable */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs */
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Checkbox label */
+.form-container label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+/* Botón de guardar */
+.form-container button {
+  padding: 12px;
+  background-color: #357edd;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.form-container button:hover {
+  background-color: #285bb5;
+}
+
+/* Botón de cancelar */
+.close-btn {
+  margin-top: 5px;
+  width: 100%;
+  padding: 10px;
+  background: #999;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.2s ease-in-out;
+}
+
+.close-btn:hover {
+  background: #777;
+}
+
+/* Animación */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

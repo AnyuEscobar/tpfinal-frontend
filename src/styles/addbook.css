@@ -1,0 +1,63 @@
+.page-banner {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #4a90e2, #1c3b70);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de la sección */
+.page-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilo general del formulario */
+.form-container {
+  background: white;
+  padding: 25px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  border-radius: 12px;
+  border: 1px solid #d0d7de;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs */
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Checkbox label */
+.form-container label {
+  font-size: 1rem;
+}
+
+/* Botón */
+.form-container button {
+  padding: 12px;
+  background-color: #357edd;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.form-container button:hover {
+  background-color: #285bb5;
+}

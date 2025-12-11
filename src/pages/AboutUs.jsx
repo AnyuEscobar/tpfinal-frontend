@@ -1,4 +1,5 @@
 import Layout from "../components/Layout"
+import "../styles/aboutus.css"
 
 const AboutUs = () => {
   return (

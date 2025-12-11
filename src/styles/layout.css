@@ -1,0 +1,67 @@
+/* =============================
+   BANNER SUPERIOR
+============================= */
+.page-banner {
+  background: #d5b892;
+  padding: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #3a2a14;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #b79a76;
+  box-shadow: 0 2px 4px rgba(50, 30, 10, 0.3);
+  font-family: "Georgia", serif;
+}
+
+/* =============================
+   NAVBAR VINTAGE
+============================= */
+.nav-vintage {
+  background: #e6d7c3;
+  padding: 12px 20px;
+  border-bottom: 2px solid #c4ad8c;
+  box-shadow: 0px 2px 4px rgba(80, 55, 30, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Georgia", serif;
+}
+
+/* LINKS DEL NAV */
+.nav-left a,
+.nav-right a {
+  font-family: "Georgia", serif;
+  color: #4a3420 !important;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+  text-decoration: underline;
+}
+
+/* BOTÓN LOGOUT */
+.nav-right button {
+  background: #b48f67;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-family: "Georgia", serif;
+  transition: 0.25s;
+}
+
+.nav-right button:hover {
+  background: #967453;
+}
+
+/* CONTENEDOR GENERAL PARA ORGANIZAR TODO */
+.layout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

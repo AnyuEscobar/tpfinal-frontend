@@ -1,0 +1,68 @@
+.contact-form {
+  background: #fdf8ef;
+  padding: 25px;
+  max-width: 500px;
+  margin: 30px auto;
+  border: 2px solid #d3b896;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(80, 55, 30, 0.25);
+  font-family: "Georgia", serif;
+  color: #3e2a15;
+}
+
+/* Títulos */
+.contact-form h1 {
+  text-align: center;
+  color: #3a2a14;
+}
+
+/* Contenedor de cada input */
+.contact-form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.contact-form label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #4a3420;
+}
+
+/* Inputs y textarea */
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 12px;
+  background: #fcf7ef;
+  border: 1px solid #bfa98a;
+  border-radius: 5px;
+  font-family: "Georgia", serif;
+  color: #3e2a15;
+  transition: 0.25s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #9d7f59;
+  background: #fffdf8;
+}
+
+/* Botón */
+.contact-form button {
+  background: #c19d74;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Georgia", serif;
+  cursor: pointer;
+  transition: 0.25s;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact-form button:hover {
+  background: #a98258;
+}
