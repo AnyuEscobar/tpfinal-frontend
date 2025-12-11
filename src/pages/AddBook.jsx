@@ -8,7 +8,7 @@ const AddBook = () => {
     title: "",
     author: "",
     genre: "",
-    year: "",
+    publishedYear: "",
     available: true
   })
 
@@ -27,7 +27,7 @@ const AddBook = () => {
         },
         body: JSON.stringify({
           ...formData,
-          year: Number(formData.year)
+          publishedYear: Number(formData.publishedYear)
         })
       })
 
@@ -44,7 +44,7 @@ const AddBook = () => {
         title: "",
         author: "",
         genre: "",
-        year: "",
+        publishedYear: "",
         available: true
       })
 
@@ -107,11 +107,11 @@ const AddBook = () => {
           <input
             type="number"
             placeholder="Año de publicación"
-            name="year"
+            name="publishedYear"
             min={1500}
             max={2100}
             onChange={handleChange}
-            value={formData.year}
+            value={formData.publishedYear}
             required
           />
 
