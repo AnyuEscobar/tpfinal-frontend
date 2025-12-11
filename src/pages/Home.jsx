@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import { useAuth } from "../context/AuthContext"
-import UpdateBook from "./UpdateBook"
+import UpdateBook from "../components/UpdateBook"
 import ToastMessage from "../components/ToastMessage"
 import { GENRE } from "../constants/genres"
 
